@@ -1,0 +1,158 @@
+name: notes.kargware-icon-font
+
+on:
+  push:
+    branches:
+      - master
+      
+env:
+  VER_ICON_FONT_GENERATOR: 2.1.11
+  SVG_DIR: svgs
+  DIST_DIR: dist
+  DIST_CSS_DIR: $DIST_DIR/css
+  DIST_FONTS_DIR: $DIST_DIR/fonts
+
+jobs:
+  webfont-generation:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    
+    steps:
+      ## No git code is needed
+      #- uses: actions/checkout@v2
+      
+      - name: Create Folders
+        run: |
+          mkdir -p $DIST_DIR
+          mkdir -p $DIST_CSS_DIR
+          mkdir -p $DIST_FONTS_DIR
+          ls -lR $DIST_DIR
+
+      # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install `icon-font-generator` via npm
+        run: npm install --save-dev icon-font-generator@$VER_ICON_FONT_GENERATOR
+        
+      - name: Install `fontawesome` via npm
+        run: npm install --save-dev @fortawesome/fontawesome-free
+
+      - name: Copy SVGs from fontawesome (BRANDS)
+        env: 
+          NODE_BASE_FOLDER: ./node_modules/@fortawesome/fontawesome-free/svgs/brands
+        run: |
+          cp $NODE_BASE_FOLDER/facebook.svg $ASSETS_SVG_DIR/fa-brands-facebook.svg
+          cp $NODE_BASE_FOLDER/github.svg $ASSETS_SVG_DIR/fa-brands-github.svg
+          cp $NODE_BASE_FOLDER/gitlab.svg $ASSETS_SVG_DIR/fa-brands-gitlab.svg
+          cp $NODE_BASE_FOLDER/instagram.svg $ASSETS_SVG_DIR/fa-brands-instagram.svg
+          cp $NODE_BASE_FOLDER/stack-overflow.svg $ASSETS_SVG_DIR/fa-brands-stack-overflow.svg
+          cp $NODE_BASE_FOLDER/twitter.svg $ASSETS_SVG_DIR/fa-brands-twitter.svg
+          cp $NODE_BASE_FOLDER/whatsapp.svg $ASSETS_SVG_DIR/fa-brands-whatsapp.svg
+          cp $NODE_BASE_FOLDER/wordpress.svg $ASSETS_SVG_DIR/fa-brands-wordpress.svg
+
+      - name: Copy SVGs from fontawesome (SOLID)
+        env: 
+          NODE_BASE_FOLDER: ./node_modules/@fortawesome/fontawesome-free/svgs/solid
+        run: |
+          cp $NODE_BASE_FOLDER/arrow-down.svg $ASSETS_SVG_DIR/fa-solid-arrow-down.svg
+          cp $NODE_BASE_FOLDER/arrow-up.svg $ASSETS_SVG_DIR/fa-solid-arrow-up.svg
+          cp $NODE_BASE_FOLDER/arrow-circle-down.svg $ASSETS_SVG_DIR/fa-solid-arrow-circle-down.svg
+          cp $NODE_BASE_FOLDER/arrow-circle-up.svg $ASSETS_SVG_DIR/fa-solid-arrow-circle-up.svg
+          cp $NODE_BASE_FOLDER/asterisk.svg $ASSETS_SVG_DIR/fa-solid-asterisk.svg
+          cp $NODE_BASE_FOLDER/at.svg $ASSETS_SVG_DIR/fa-solid-at.svg
+          cp $NODE_BASE_FOLDER/balance-scale.svg $ASSETS_SVG_DIR/fa-solid-balance-scale.svg
+          cp $NODE_BASE_FOLDER/bars.svg $ASSETS_SVG_DIR/fa-solid-bars.svg
+          cp $NODE_BASE_FOLDER/chart-line.svg $ASSETS_SVG_DIR/fa-solid-chart-line.svg
+          cp $NODE_BASE_FOLDER/clock.svg $ASSETS_SVG_DIR/fa-solid-clock.svg
+          cp $NODE_BASE_FOLDER/cloud.svg $ASSETS_SVG_DIR/fa-solid-cloud.svg
+          cp $NODE_BASE_FOLDER/cog.svg $ASSETS_SVG_DIR/fa-solid-cog.svg
+          cp $NODE_BASE_FOLDER/comment-dots.svg $ASSETS_SVG_DIR/fa-solid-comment-dots.svg
+          cp $NODE_BASE_FOLDER/edit.svg $ASSETS_SVG_DIR/fa-solid-edit.svg
+          cp $NODE_BASE_FOLDER/envelope.svg $ASSETS_SVG_DIR/fa-solid-envelope.svg
+          cp $NODE_BASE_FOLDER/envelope-open-text.svg $ASSETS_SVG_DIR/fa-solid-envelope-open-text.svg
+          cp $NODE_BASE_FOLDER/eye.svg $ASSETS_SVG_DIR/fa-solid-eye.svg
+          cp $NODE_BASE_FOLDER/globe.svg $ASSETS_SVG_DIR/fa-solid-globe.svg
+          cp $NODE_BASE_FOLDER/industry.svg $ASSETS_SVG_DIR/fa-solid-industry.svg
+          cp $NODE_BASE_FOLDER/info.svg $ASSETS_SVG_DIR/fa-solid-info.svg
+          cp $NODE_BASE_FOLDER/layer-group.svg $ASSETS_SVG_DIR/fa-solid-layer-group.svg
+          cp $NODE_BASE_FOLDER/mobile.svg $ASSETS_SVG_DIR/fa-solid-mobile.svg
+          cp $NODE_BASE_FOLDER/phone.svg $ASSETS_SVG_DIR/fa-solid-phone.svg
+          cp $NODE_BASE_FOLDER/rss.svg $ASSETS_SVG_DIR/fa-solid-rss.svg
+          cp $NODE_BASE_FOLDER/share-alt.svg $ASSETS_SVG_DIR/fa-solid-share-alt.svg
+          cp $NODE_BASE_FOLDER/search.svg $ASSETS_SVG_DIR/fa-solid-search.svg
+          cp $NODE_BASE_FOLDER/search-minus.svg $ASSETS_SVG_DIR/fa-solid-search-minus.svg
+          cp $NODE_BASE_FOLDER/tags.svg $ASSETS_SVG_DIR/fa-solid-tags.svg
+          cp $NODE_BASE_FOLDER/thumbs-down.svg $ASSETS_SVG_DIR/fa-solid-thumbs-down.svg
+          cp $NODE_BASE_FOLDER/thumbs-up.svg $ASSETS_SVG_DIR/fa-solid-thumbs-up.svg
+          cp $NODE_BASE_FOLDER/user.svg $ASSETS_SVG_DIR/fa-solid-user.svg
+          cp $NODE_BASE_FOLDER/user-secret.svg $ASSETS_SVG_DIR/fa-solid-user-secret.svg
+
+      - name: Download Iconfinder SVGs
+        run: |
+          curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $ASSETS_SVG_DIR/iconfinder-jekyll.svg
+
+      - name: Download Icons from Wikipedia
+        run: |
+          curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $ASSETS_SVG_DIR/nuget.svg
+      
+      - name: Generate Webfont
+        run: |
+          npx icon-font-generator \
+            $SVG_DIR/*.svg \
+            --out $DIST_FONTS_DIR \
+            --name "Notes.KargWare-Icon-Font" \
+            --css true \
+            --csspath $DIST_CSS_DIR/notes.kargware-icon-font.css \
+            --cssfontsurl ../fonts \
+            --html true \
+            --htmlpath $DIST_DIR/index.html \
+            --prefix svg-icon \
+            --tag em
+          ls -lR $DIST_DIR
+
+      - name: Archive artifacts - fonts only
+        uses: actions/upload-artifact@v2
+        with:
+          name: fonts-only
+          path: |
+            $DIST_DIR/fonts
+            !**/*.css
+            !**/*.html
+
+      - name: Archive artifacts - dist
+        uses: actions/upload-artifact@v2
+        with:
+          name: notes.kargware-icon-font
+          path: |
+            $DIST_DIR            
+          
+      - name: Deploy as GitHub Page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: $DIST_DIR
+
+      # https://github.com/actions/create-release
+      # https://github.com/softprops/action-gh-release
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          if: startsWith(github.ref, 'refs/tags/')
+          body: |
+            Changes in this Release
+            - Initial commit
+            - Setup the pipeline
+            - Keep the artifacts
+          draft: false
+          prerelease: false
