@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "Notes.KargWare-Icon-Font";
+    src: url("../fonts/Notes.KargWare-Icon-Font.eot?d9752d97291ac33bebe3635af5502107?#iefix") format("embedded-opentype"),
+url("../fonts/Notes.KargWare-Icon-Font.woff2?d9752d97291ac33bebe3635af5502107") format("woff2"),
+url("../fonts/Notes.KargWare-Icon-Font.woff?d9752d97291ac33bebe3635af5502107") format("woff"),
+url("../fonts/Notes.KargWare-Icon-Font.ttf?d9752d97291ac33bebe3635af5502107") format("truetype"),
+url("../fonts/Notes.KargWare-Icon-Font.svg?d9752d97291ac33bebe3635af5502107#Notes.KargWare-Icon-Font") format("svg");
+}
+
+em[class^="svg-icon-"]:before, em[class*=" svg-icon-"]:before {
+    font-family: Notes.KargWare-Icon-Font !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.svg-icon-fa-brands-facebook:before {
+    content: "\f101";
+}
+.svg-icon-fa-brands-github:before {
+    content: "\f102";
+}
+.svg-icon-fa-brands-gitlab:before {
+    content: "\f103";
+}
+.svg-icon-fa-brands-instagram:before {
+    content: "\f104";
+}
+.svg-icon-fa-brands-stack-overflow:before {
+    content: "\f105";
+}
+.svg-icon-fa-brands-twitter:before {
+    content: "\f106";
+}
+.svg-icon-fa-brands-whatsapp:before {
+    content: "\f107";
+}
+.svg-icon-fa-brands-wordpress:before {
+    content: "\f108";
+}
+.svg-icon-fa-solid-arrow-circle-down:before {
+    content: "\f109";
+}
+.svg-icon-fa-solid-arrow-circle-up:before {
+    content: "\f10a";
+}
+.svg-icon-fa-solid-arrow-down:before {
+    content: "\f10b";
+}
+.svg-icon-fa-solid-arrow-up:before {
+    content: "\f10c";
+}
+.svg-icon-fa-solid-asterisk:before {
+    content: "\f10d";
+}
+.svg-icon-fa-solid-at:before {
+    content: "\f10e";
+}
+.svg-icon-fa-solid-balance-scale:before {
+    content: "\f10f";
+}
+.svg-icon-fa-solid-bars:before {
+    content: "\f110";
+}
+.svg-icon-fa-solid-chart-line:before {
+    content: "\f111";
+}
+.svg-icon-fa-solid-clock:before {
+    content: "\f112";
+}
+.svg-icon-fa-solid-cloud:before {
+    content: "\f113";
+}
+.svg-icon-fa-solid-cog:before {
+    content: "\f114";
+}
+.svg-icon-fa-solid-comment-dots:before {
+    content: "\f115";
+}
+.svg-icon-fa-solid-edit:before {
+    content: "\f116";
+}
+.svg-icon-fa-solid-envelope-open-text:before {
+    content: "\f117";
+}
+.svg-icon-fa-solid-envelope:before {
+    content: "\f118";
+}
+.svg-icon-fa-solid-eye:before {
+    content: "\f119";
+}
+.svg-icon-fa-solid-globe:before {
+    content: "\f11a";
+}
+.svg-icon-fa-solid-industry:before {
+    content: "\f11b";
+}
+.svg-icon-fa-solid-info:before {
+    content: "\f11c";
+}
+.svg-icon-fa-solid-layer-group:before {
+    content: "\f11d";
+}
+.svg-icon-fa-solid-mobile:before {
+    content: "\f11e";
+}
+.svg-icon-fa-solid-phone:before {
+    content: "\f11f";
+}
+.svg-icon-fa-solid-rss:before {
+    content: "\f120";
+}
+.svg-icon-fa-solid-search-minus:before {
+    content: "\f121";
+}
+.svg-icon-fa-solid-search:before {
+    content: "\f122";
+}
+.svg-icon-fa-solid-share-alt:before {
+    content: "\f123";
+}
+.svg-icon-fa-solid-tags:before {
+    content: "\f124";
+}
+.svg-icon-fa-solid-thumbs-down:before {
+    content: "\f125";
+}
+.svg-icon-fa-solid-thumbs-up:before {
+    content: "\f126";
+}
+.svg-icon-fa-solid-user-secret:before {
+    content: "\f127";
+}
+.svg-icon-fa-solid-user:before {
+    content: "\f128";
+}
+.svg-icon-iconfinder-jekyll:before {
+    content: "\f129";
+}
+.svg-icon-nuget:before {
+    content: "\f12a";
+}
