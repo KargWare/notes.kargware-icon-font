@@ -12,7 +12,6 @@ env:
   DIST_CSS_DIR: $DIST_DIR/css
   DIST_FONTS_DIR: $DIST_DIR/fonts
   DIST_FONTS_DIR2: ${DIST_DIR}/fonts
-  DIST_FONTS_DIR3: ${{DIST_DIR}}/fonts
 
 jobs:
   webfont-generation:
