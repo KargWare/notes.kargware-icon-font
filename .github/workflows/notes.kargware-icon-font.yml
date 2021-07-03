@@ -125,7 +125,7 @@ jobs:
         with:
           name: fonts-only
           path: |
-            $DIST_DIR/fonts
+            $DIST_FONTS_DIR/
             !**/*.css
             !**/*.html
 
@@ -134,8 +134,7 @@ jobs:
         with:
           name: notes.kargware-icon-font
           path: |
-            $DIST_DIR
-            $DIST_DIR/index.html
+            dist
           
       - name: Deploy as GitHub Page
         uses: peaceiris/actions-gh-pages@v3
