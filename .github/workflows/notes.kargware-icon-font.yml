@@ -9,9 +9,11 @@ env:
   VER_ICON_FONT_GENERATOR: 2.1.11
   SVG_DIR: svgs
   DIST_DIR: dist
-  DIST_CSS_DIR: $DIST_DIR/css
-  DIST_FONTS_DIR: $DIST_DIR/fonts
-  DIST_FONTS_DIR2: ${DIST_DIR}/fonts
+  DIST_CSS_DIR: dist/css
+  DIST_FONTS_DIR: dist/fonts
+  # DIST_CSS_DIR: $DIST_DIR/css
+  # DIST_FONTS_DIR: $DIST_DIR/fonts
+  # DIST_FONTS_DIR2: ${DIST_DIR}/fonts
 
 jobs:
   webfont-generation:
