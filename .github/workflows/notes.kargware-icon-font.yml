@@ -47,59 +47,59 @@ jobs:
         env: 
           NODE_BASE_FOLDER: ./node_modules/@fortawesome/fontawesome-free/svgs/brands
         run: |
-          cp $NODE_BASE_FOLDER/facebook.svg $ASSETS_SVG_DIR/fa-brands-facebook.svg
-          cp $NODE_BASE_FOLDER/github.svg $ASSETS_SVG_DIR/fa-brands-github.svg
-          cp $NODE_BASE_FOLDER/gitlab.svg $ASSETS_SVG_DIR/fa-brands-gitlab.svg
-          cp $NODE_BASE_FOLDER/instagram.svg $ASSETS_SVG_DIR/fa-brands-instagram.svg
-          cp $NODE_BASE_FOLDER/stack-overflow.svg $ASSETS_SVG_DIR/fa-brands-stack-overflow.svg
-          cp $NODE_BASE_FOLDER/twitter.svg $ASSETS_SVG_DIR/fa-brands-twitter.svg
-          cp $NODE_BASE_FOLDER/whatsapp.svg $ASSETS_SVG_DIR/fa-brands-whatsapp.svg
-          cp $NODE_BASE_FOLDER/wordpress.svg $ASSETS_SVG_DIR/fa-brands-wordpress.svg
+          cp $NODE_BASE_FOLDER/facebook.svg $SVG_DIR/fa-brands-facebook.svg
+          cp $NODE_BASE_FOLDER/github.svg $SVG_DIR/fa-brands-github.svg
+          cp $NODE_BASE_FOLDER/gitlab.svg $SVG_DIR/fa-brands-gitlab.svg
+          cp $NODE_BASE_FOLDER/instagram.svg $SVG_DIR/fa-brands-instagram.svg
+          cp $NODE_BASE_FOLDER/stack-overflow.svg $SVG_DIR/fa-brands-stack-overflow.svg
+          cp $NODE_BASE_FOLDER/twitter.svg $SVG_DIR/fa-brands-twitter.svg
+          cp $NODE_BASE_FOLDER/whatsapp.svg $SVG_DIR/fa-brands-whatsapp.svg
+          cp $NODE_BASE_FOLDER/wordpress.svg $SVG_DIR/fa-brands-wordpress.svg
 
       - name: Copy SVGs from fontawesome (SOLID)
         env: 
           NODE_BASE_FOLDER: ./node_modules/@fortawesome/fontawesome-free/svgs/solid
         run: |
-          cp $NODE_BASE_FOLDER/arrow-down.svg $ASSETS_SVG_DIR/fa-solid-arrow-down.svg
-          cp $NODE_BASE_FOLDER/arrow-up.svg $ASSETS_SVG_DIR/fa-solid-arrow-up.svg
-          cp $NODE_BASE_FOLDER/arrow-circle-down.svg $ASSETS_SVG_DIR/fa-solid-arrow-circle-down.svg
-          cp $NODE_BASE_FOLDER/arrow-circle-up.svg $ASSETS_SVG_DIR/fa-solid-arrow-circle-up.svg
-          cp $NODE_BASE_FOLDER/asterisk.svg $ASSETS_SVG_DIR/fa-solid-asterisk.svg
-          cp $NODE_BASE_FOLDER/at.svg $ASSETS_SVG_DIR/fa-solid-at.svg
-          cp $NODE_BASE_FOLDER/balance-scale.svg $ASSETS_SVG_DIR/fa-solid-balance-scale.svg
-          cp $NODE_BASE_FOLDER/bars.svg $ASSETS_SVG_DIR/fa-solid-bars.svg
-          cp $NODE_BASE_FOLDER/chart-line.svg $ASSETS_SVG_DIR/fa-solid-chart-line.svg
-          cp $NODE_BASE_FOLDER/clock.svg $ASSETS_SVG_DIR/fa-solid-clock.svg
-          cp $NODE_BASE_FOLDER/cloud.svg $ASSETS_SVG_DIR/fa-solid-cloud.svg
-          cp $NODE_BASE_FOLDER/cog.svg $ASSETS_SVG_DIR/fa-solid-cog.svg
-          cp $NODE_BASE_FOLDER/comment-dots.svg $ASSETS_SVG_DIR/fa-solid-comment-dots.svg
-          cp $NODE_BASE_FOLDER/edit.svg $ASSETS_SVG_DIR/fa-solid-edit.svg
-          cp $NODE_BASE_FOLDER/envelope.svg $ASSETS_SVG_DIR/fa-solid-envelope.svg
-          cp $NODE_BASE_FOLDER/envelope-open-text.svg $ASSETS_SVG_DIR/fa-solid-envelope-open-text.svg
-          cp $NODE_BASE_FOLDER/eye.svg $ASSETS_SVG_DIR/fa-solid-eye.svg
-          cp $NODE_BASE_FOLDER/globe.svg $ASSETS_SVG_DIR/fa-solid-globe.svg
-          cp $NODE_BASE_FOLDER/industry.svg $ASSETS_SVG_DIR/fa-solid-industry.svg
-          cp $NODE_BASE_FOLDER/info.svg $ASSETS_SVG_DIR/fa-solid-info.svg
-          cp $NODE_BASE_FOLDER/layer-group.svg $ASSETS_SVG_DIR/fa-solid-layer-group.svg
-          cp $NODE_BASE_FOLDER/mobile.svg $ASSETS_SVG_DIR/fa-solid-mobile.svg
-          cp $NODE_BASE_FOLDER/phone.svg $ASSETS_SVG_DIR/fa-solid-phone.svg
-          cp $NODE_BASE_FOLDER/rss.svg $ASSETS_SVG_DIR/fa-solid-rss.svg
-          cp $NODE_BASE_FOLDER/share-alt.svg $ASSETS_SVG_DIR/fa-solid-share-alt.svg
-          cp $NODE_BASE_FOLDER/search.svg $ASSETS_SVG_DIR/fa-solid-search.svg
-          cp $NODE_BASE_FOLDER/search-minus.svg $ASSETS_SVG_DIR/fa-solid-search-minus.svg
-          cp $NODE_BASE_FOLDER/tags.svg $ASSETS_SVG_DIR/fa-solid-tags.svg
-          cp $NODE_BASE_FOLDER/thumbs-down.svg $ASSETS_SVG_DIR/fa-solid-thumbs-down.svg
-          cp $NODE_BASE_FOLDER/thumbs-up.svg $ASSETS_SVG_DIR/fa-solid-thumbs-up.svg
-          cp $NODE_BASE_FOLDER/user.svg $ASSETS_SVG_DIR/fa-solid-user.svg
-          cp $NODE_BASE_FOLDER/user-secret.svg $ASSETS_SVG_DIR/fa-solid-user-secret.svg
+          cp $NODE_BASE_FOLDER/arrow-down.svg $SVG_DIR/fa-solid-arrow-down.svg
+          cp $NODE_BASE_FOLDER/arrow-up.svg $SVG_DIR/fa-solid-arrow-up.svg
+          cp $NODE_BASE_FOLDER/arrow-circle-down.svg $SVG_DIR/fa-solid-arrow-circle-down.svg
+          cp $NODE_BASE_FOLDER/arrow-circle-up.svg $SVG_DIR/fa-solid-arrow-circle-up.svg
+          cp $NODE_BASE_FOLDER/asterisk.svg $SVG_DIR/fa-solid-asterisk.svg
+          cp $NODE_BASE_FOLDER/at.svg $SVG_DIR/fa-solid-at.svg
+          cp $NODE_BASE_FOLDER/balance-scale.svg $SVG_DIR/fa-solid-balance-scale.svg
+          cp $NODE_BASE_FOLDER/bars.svg $SVG_DIR/fa-solid-bars.svg
+          cp $NODE_BASE_FOLDER/chart-line.svg $SVG_DIR/fa-solid-chart-line.svg
+          cp $NODE_BASE_FOLDER/clock.svg $SVG_DIR/fa-solid-clock.svg
+          cp $NODE_BASE_FOLDER/cloud.svg $SVG_DIR/fa-solid-cloud.svg
+          cp $NODE_BASE_FOLDER/cog.svg $SVG_DIR/fa-solid-cog.svg
+          cp $NODE_BASE_FOLDER/comment-dots.svg $SVG_DIR/fa-solid-comment-dots.svg
+          cp $NODE_BASE_FOLDER/edit.svg $SVG_DIR/fa-solid-edit.svg
+          cp $NODE_BASE_FOLDER/envelope.svg $SVG_DIR/fa-solid-envelope.svg
+          cp $NODE_BASE_FOLDER/envelope-open-text.svg $SVG_DIR/fa-solid-envelope-open-text.svg
+          cp $NODE_BASE_FOLDER/eye.svg $SVG_DIR/fa-solid-eye.svg
+          cp $NODE_BASE_FOLDER/globe.svg $SVG_DIR/fa-solid-globe.svg
+          cp $NODE_BASE_FOLDER/industry.svg $SVG_DIR/fa-solid-industry.svg
+          cp $NODE_BASE_FOLDER/info.svg $SVG_DIR/fa-solid-info.svg
+          cp $NODE_BASE_FOLDER/layer-group.svg $SVG_DIR/fa-solid-layer-group.svg
+          cp $NODE_BASE_FOLDER/mobile.svg $SVG_DIR/fa-solid-mobile.svg
+          cp $NODE_BASE_FOLDER/phone.svg $SVG_DIR/fa-solid-phone.svg
+          cp $NODE_BASE_FOLDER/rss.svg $SVG_DIR/fa-solid-rss.svg
+          cp $NODE_BASE_FOLDER/share-alt.svg $SVG_DIR/fa-solid-share-alt.svg
+          cp $NODE_BASE_FOLDER/search.svg $SVG_DIR/fa-solid-search.svg
+          cp $NODE_BASE_FOLDER/search-minus.svg $SVG_DIR/fa-solid-search-minus.svg
+          cp $NODE_BASE_FOLDER/tags.svg $SVG_DIR/fa-solid-tags.svg
+          cp $NODE_BASE_FOLDER/thumbs-down.svg $SVG_DIR/fa-solid-thumbs-down.svg
+          cp $NODE_BASE_FOLDER/thumbs-up.svg $SVG_DIR/fa-solid-thumbs-up.svg
+          cp $NODE_BASE_FOLDER/user.svg $SVG_DIR/fa-solid-user.svg
+          cp $NODE_BASE_FOLDER/user-secret.svg $SVG_DIR/fa-solid-user-secret.svg
 
       - name: Download Iconfinder SVGs
         run: |
-          curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $ASSETS_SVG_DIR/iconfinder-jekyll.svg
+          curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $SVG_DIR/iconfinder-jekyll.svg
 
       - name: Download Icons from Wikipedia
         run: |
-          curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $ASSETS_SVG_DIR/nuget.svg
+          curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $SVG_DIR/nuget.svg
       
       - name: Generate Webfont
         run: |
