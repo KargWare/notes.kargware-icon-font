@@ -1,0 +1,26 @@
+{
+  "name": "notes.kargware-icon-font",
+  "version": "1.0.0",
+  "description": "Generate a font (eot, ttf, woff, woff2) based on SVGs which are used om the blgg https://notes.kargware.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KargWare/notes.kargware-icon-font.git"
+  },
+  "keywords": [
+    "fonts"
+  ],
+  "author": "Nicolas Karg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KargWare/notes.kargware-icon-font/issues"
+  },
+  "homepage": "https://github.com/KargWare/notes.kargware-icon-font#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "icon-font-generator": "^2.1.11"
+  }
+}
