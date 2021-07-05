@@ -24,7 +24,7 @@ jobs:
       
       - name: Create Folders
         run: |
-          make create-folders DIST_DIR=$DIST_DIR SVG_DIR=$(SVG_DIR)
+          make create-folders DIST_DIR=$DIST_DIR SVG_DIR=$SVG_DIR
           ls -lR $DIST_DIR
 
       # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
@@ -37,10 +37,10 @@ jobs:
         run: make install-font-generator
         
       - name: Collect / Download the SVGs
-        run: make collect-svgs SVG_DIR=$(SVG_DIR)
+        run: make collect-svgs SVG_DIR=$SVG_DIR
       
       - name: Generate Webfont
-        run: make generate-font SVG_DIR=$(SVG_DIR)
+        run: make generate-font SVG_DIR=$SVG_DIR
 
       - name: Archive artifacts - fonts only
         uses: actions/upload-artifact@v2
