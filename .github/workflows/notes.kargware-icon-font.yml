@@ -148,8 +148,9 @@ jobs:
       - name: Deploy as GitHub Page 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages # The branch the action should deploy to.
-          folder: $DIST_DIR # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
 
       ## https://github.com/actions/create-release
       ## https://github.com/softprops/action-gh-release
