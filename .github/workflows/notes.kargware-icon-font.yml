@@ -24,8 +24,8 @@ jobs:
         node-version: [14.x]
     
     steps:
-      ## No git code is needed
-      #- uses: actions/checkout@v2
+      # No git code is needed
+      - uses: actions/checkout@v2
       
       - name: Create Folders
         run: |
