@@ -3,6 +3,7 @@ name: notes.kargware-icon-font
 on:
   push:
     branches:
+      - gh-pages
       - master
       
 env:
