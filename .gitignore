@@ -1,3 +1,7 @@
+# Source and Dist folder
+svgs/
+dist/
+
 # Logs
 logs
 *.log
