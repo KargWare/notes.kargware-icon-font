@@ -25,15 +25,12 @@ jobs:
         node-version: [14.x]
     
     steps:
-      # No git code is needed
+      # Checkout the code
       - uses: actions/checkout@v2
       
       - name: Create Folders
         run: |
-          mkdir -p $SVG_DIR
-          mkdir -p $DIST_DIR
-          mkdir -p $DIST_CSS_DIR
-          mkdir -p $DIST_FONTS_DIR
+          make create-folders
           ls -lR $DIST_DIR
 
       # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
