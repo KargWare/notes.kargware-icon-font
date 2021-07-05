@@ -4,9 +4,52 @@ DIST_DIR=dist
 DIST_CSS_DIR=$(DIST_DIR)/css
 DIST_FONTS_DIR=$(DIST_DIR)/fonts
 VER_ICON_FONT_GENERATOR=2.1.11
+VER_FONTAWESOME=5.15.3
 FONT_NAME=Notes-KargWare Icon-Font
 FONT_NAME_CSS=notes-kargware-icon-font
 DEMO_PORT=8080
+ARR_FONTAWESOME_BRANDS= \
+	"facebook" \
+	"github" \
+	"gitlab" \
+	"instagram.svg" \
+	"stack-overflow" \
+	"twitter" \
+	"whatsapp" \
+	"wordpress"
+ARR_FONTAWESOME_SOLID= \
+	"arrow-down" \
+	"arrow-up" \
+	"arrow-circle-down" \
+	"arrow-circle-up" \
+	"asterisk" \
+	"at" \
+	"balance-scale" \
+	"bars" \
+	"chart-line" \
+	"clock" \
+	"cloud" \
+	"cog" \
+	"comment-dots" \
+	"edit" \
+	"envelope" \
+	"envelope-open-text" \
+	"eye" \
+	"globe" \
+	"industry" \
+	"info" \
+	"layer-group" \
+	"mobile" \
+	"phone" \
+	"rss" \
+	"share-alt" \
+	"search" \
+	"search-minus" \
+	"tags" \
+	"thumbs-down" \
+	"thumbs-up" \
+	"user" \
+	"user-secret"
 
 my-default-targets: help
 
@@ -24,6 +67,13 @@ help-sorted:
 show-pwd:
 	@echo "pwd: $(myPWD)"
 
+all: ## 00 Execute Step 00, 01, 02, 03, 04
+all: \
+	create-folders \
+	install-font-generator \
+	collect-svgs \
+	generate-font
+
 create-folders: ## 01 Created the needed folders
 	mkdir -p $(SVG_DIR)
 	mkdir -p $(DIST_DIR)
@@ -38,11 +88,27 @@ install-font-generator: ## 02 Install the Font Generator
 
 collect-svgs: ## 03 Collect / Download the SVGs
 collect-svgs: \
+	collect-svgs-from-fontawesome \
 	collect-svgs-from-iconfinder \
     collect-svgs-from-wikimedia
 
-# collect-svgs-from-fontawesome:
-# 	npm install --save-dev @fortawesome/fontawesome-free
+collect-svgs-from-fontawesome: \
+	collect-svgs-from-fontawesome-install \
+	collect-svgs-from-fontawesome-brands \
+	collect-svgs-from-fontawesome-solid
+
+collect-svgs-from-fontawesome-install:
+	npm install --save-dev @fortawesome/fontawesome-free@$(VER_FONTAWESOME)
+
+collect-svgs-from-fontawesome-brands:
+	for fa in $(ARR_FONTAWESOME_BRANDS) ; do \
+		cp ./node_modules/@fortawesome/fontawesome-free/svgs/brands/$$fa.svg $(SVG_DIR)/fa-brands-$$fa.svg ; \
+	done
+
+collect-svgs-from-fontawesome-solid:
+	for fa in $(ARR_FONTAWESOME_SOLID) ; do \
+		cp ./node_modules/@fortawesome/fontawesome-free/svgs/solid/$$fa.svg $(SVG_DIR)/fa-solid-$$fa.svg ; \
+	done
 
 collect-svgs-from-iconfinder:
 	curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $(SVG_DIR)/iconfinder-jekyll.svg
@@ -56,7 +122,7 @@ generate-font: ## 04 Generate the Font
 		--out $(DIST_FONTS_DIR) \
 		--name "$(FONT_NAME)" \
 		--css true \
-		--csspath $(FONT_NAME_CSS).css \
+		--csspath $(DIST_CSS_DIR)/$(FONT_NAME_CSS).css \
 		--cssfontsurl $(shell realpath --relative-to=$(DIST_CSS_DIR) $(DIST_FONTS_DIR)) \
 		--html true \
 		--htmlpath $(DIST_DIR)/index.html \
