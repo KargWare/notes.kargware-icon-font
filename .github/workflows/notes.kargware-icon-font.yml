@@ -3,7 +3,6 @@ name: notes.kargware-icon-font
 on:
   push:
     branches:
-      - gh-pages
       - master
       
 env:
@@ -68,27 +67,35 @@ jobs:
       #    publish_dir: ./$DIST_DIR
       #    # publish_dir: ./dist
       
+      # https://github.com/JamesIves/github-pages-deploy-action
+      # https://github.com/KargWare/notes.kargware-icon-font/settings/pages Source: "gh-pages" "root"
       - name: Deploy as GitHub Page 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
 
+      - name: "Download Artifacts"   
+        uses: actions/download-artifact@v2
+        with:
+          name: fonts-only
+          path: my-tmp-artifacts
+
       ## https://github.com/actions/create-release
-      ## https://github.com/softprops/action-gh-release
-      #- name: Create Release
-      #  id: create_release
-      #  uses: actions/create-release@v1
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #  with:
-      #    tag_name: ${{ github.ref }}
-      #    release_name: Release ${{ github.ref }}
-      #    if: startsWith(github.ref, 'refs/tags/')
-      #    body: |
-      #      Changes in this Release
-      #      - Initial commit
-      #      - Setup the pipeline
-      #      - Keep the artifacts
-      #    draft: false
-      #    prerelease: false
+      # https://github.com/softprops/action-gh-release
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          # body: |
+          #   Changes in this Release
+          #   - Initial commit
+          #   - Setup the pipeline
+          #   - Keep the artifacts
+          files: my-tmp-artifacts/fonts-only.zip
+          draft: false
+          prerelease: false

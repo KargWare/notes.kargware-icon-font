@@ -90,7 +90,7 @@ collect-svgs: ## 03 Collect / Download the SVGs
 collect-svgs: \
 	collect-svgs-from-fontawesome \
 	collect-svgs-from-iconfinder \
-    collect-svgs-from-wikimedia
+	collect-svgs-from-wikimedia
 
 collect-svgs-from-fontawesome: \
 	collect-svgs-from-fontawesome-install \
