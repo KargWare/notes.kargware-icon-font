@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/KargWare/notes.kargware-icon-font#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "http-server": "^0.12.3",
     "icon-font-generator": "^2.1.11"
   }
