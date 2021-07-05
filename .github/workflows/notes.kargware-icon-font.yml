@@ -138,12 +138,18 @@ jobs:
             dist
           retention-days: 14
           
-      - name: Deploy as GitHub Page
-        uses: peaceiris/actions-gh-pages@v3
+      # - name: Deploy as GitHub Page
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: ./$DIST_DIR
+      #    # publish_dir: ./dist
+      
+      - name: Deploy as GitHub Page 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./$DIST_DIR
-          # publish_dir: ./dist
+          branch: gh-pages # The branch the action should deploy to.
+          folder: $DIST_DIR # The folder the action should deploy.
 
       ## https://github.com/actions/create-release
       ## https://github.com/softprops/action-gh-release
