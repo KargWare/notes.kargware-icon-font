@@ -125,16 +125,18 @@ jobs:
         with:
           name: fonts-only
           path: |
-            $DIST_FONTS_DIR
+            dist/fonts
             !**/*.css
             !**/*.html
+          retention-days: 14
 
       - name: Archive artifacts - dist
         uses: actions/upload-artifact@v2
         with:
           name: notes.kargware-icon-font
           path: |
-            $DIST_DIR
+            dist
+          retention-days: 14
           
       - name: Deploy as GitHub Page
         uses: peaceiris/actions-gh-pages@v3
