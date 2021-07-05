@@ -30,7 +30,7 @@ jobs:
       
       - name: Create Folders
         run: |
-          make create-folders
+          make create-folders DIST_DIR=$DIST_DIR
           ls -lR $DIST_DIR
 
       # https://docs.github.com/en/actions/guides/building-and-testing-nodejs
@@ -96,27 +96,13 @@ jobs:
           cp $NODE_BASE_FOLDER/user-secret.svg $SVG_DIR/fa-solid-user-secret.svg
 
       - name: Download Iconfinder SVGs
-        run: |
-          curl https://www.iconfinder.com/icons/4691238/download/svg/512 --output $SVG_DIR/iconfinder-jekyll.svg
+        run: make collect-svgs-from-iconfinder
 
       - name: Download Icons from Wikipedia
-        run: |
-          curl https://upload.wikimedia.org/wikipedia/commons/2/25/NuGet_project_logo.svg --output $SVG_DIR/nuget.svg
+        run: make collect-svgs-from-wikimedia
       
       - name: Generate Webfont
-        run: |
-          npx icon-font-generator \
-            $SVG_DIR/*.svg \
-            --out $DIST_FONTS_DIR \
-            --name "Notes.KargWare-Icon-Font" \
-            --css true \
-            --csspath $DIST_CSS_DIR/notes.kargware-icon-font.css \
-            --cssfontsurl ../fonts \
-            --html true \
-            --htmlpath $DIST_DIR/index.html \
-            --prefix svg-icon \
-            --tag em
-          ls -lR $DIST_DIR
+        run: make generate-font
 
       - name: Archive artifacts - fonts only
         uses: actions/upload-artifact@v2
