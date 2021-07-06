@@ -103,6 +103,7 @@ jobs:
         with:
           name: fonts-only
           path: my-tmp-artifacts
+        run: ls -lR my-tmp-artifacts
 
       ## https://github.com/actions/create-release
       # https://github.com/softprops/action-gh-release
@@ -113,7 +114,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          name: Release ${{ steps.branch_name.outputs.SOURCE_TAG }}
           # body: |
           #   Changes in this Release
           #   - Initial commit
