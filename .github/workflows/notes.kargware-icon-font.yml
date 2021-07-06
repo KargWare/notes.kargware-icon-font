@@ -103,7 +103,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: fonts-only
-          path: ${{ ARTIFACT_DIR }}
+          path: ${ARTIFACT_DIR}
       
       - name: "List Artifacts"
         run: ls -lR $ARTIFACT_DIR
@@ -123,6 +123,6 @@ jobs:
           #   - Initial commit
           #   - Setup the pipeline
           #   - Keep the artifacts
-          files: ${{ ARTIFACT_DIR }}
+          files: ${ARTIFACT_DIR}
           draft: false
           prerelease: false
