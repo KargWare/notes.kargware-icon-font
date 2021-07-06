@@ -41,9 +41,9 @@ jobs:
       - name: Echo the version of GITHUB_REF
         # run: ${{ steps.get_version.outputs.VERSION }}
         run: |
-          printf "%-15s : %-25s" SOURCE_NAME $SOURCE_NAME
-          printf "%-15s : %-25s" SOURCE_BRANCH $SOURCE_BRANCH
-          printf "%-15s : %-25s" SOURCE_TAG $SOURCE_TAG
+          printf "%-15s : %-25s\n" SOURCE_NAME $SOURCE_NAME
+          printf "%-15s : %-25s\n" SOURCE_BRANCH $SOURCE_BRANCH
+          printf "%-15s : %-25s\n" SOURCE_TAG $SOURCE_TAG
         env:
           SOURCE_NAME: ${{ steps.branch_name.outputs.SOURCE_NAME }}
           SOURCE_BRANCH: ${{ steps.branch_name.outputs.SOURCE_BRANCH }}
