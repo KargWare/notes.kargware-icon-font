@@ -98,11 +98,13 @@ jobs:
           branch: gh-pages # The branch the action should deploy to.
           folder: dist # The folder the action should deploy.
 
-      - name: "Download Artifacts"   
+      - name: "Download Artifacts"
         uses: actions/download-artifact@v2
         with:
           name: fonts-only
           path: my-tmp-artifacts
+      
+      - name: "List Artifacts"
         run: ls -lR my-tmp-artifacts
 
       ## https://github.com/actions/create-release
