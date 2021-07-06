@@ -123,6 +123,6 @@ jobs:
           #   - Initial commit
           #   - Setup the pipeline
           #   - Keep the artifacts
-          files: my-tmp-artifacts
+          files: my-tmp-artifacts/**
           draft: false
           prerelease: false
