@@ -10,6 +10,7 @@ on:
 env:
   SVG_DIR: svgs
   DIST_DIR: dist
+  ARTIFACT_DIR: my-tmp-artifacts
 
 jobs:
   webfont-generation:
@@ -102,10 +103,10 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: fonts-only
-          path: my-tmp-artifacts
+          path: $ARTIFACT_DIR
       
       - name: "List Artifacts"
-        run: ls -lR my-tmp-artifacts
+        run: ls -lR $ARTIFACT_DIR
 
       ## https://github.com/actions/create-release
       # https://github.com/softprops/action-gh-release
@@ -122,6 +123,6 @@ jobs:
           #   - Initial commit
           #   - Setup the pipeline
           #   - Keep the artifacts
-          files: my-tmp-artifacts/fonts-only.zip
+          files: $ARTIFACT_DIR
           draft: false
           prerelease: false
