@@ -12,7 +12,7 @@ ARR_FONTAWESOME_BRANDS= \
 	"facebook" \
 	"github" \
 	"gitlab" \
-	"instagram.svg" \
+	"instagram" \
 	"stack-overflow" \
 	"twitter" \
 	"whatsapp" \
