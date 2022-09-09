@@ -75,6 +75,16 @@ jobs:
             !**/*.html
             !**/*.svg
           retention-days: 14
+      
+      - name: Archive artifacts - SCSS
+        uses: actions/upload-artifact@v2
+        with:
+          name: SCSS
+          path: |
+            dist/fonts
+            !**/*.scss
+            !**/*.html
+          retention-days: 14
 
       - name: Archive artifacts - dist
         uses: actions/upload-artifact@v2
