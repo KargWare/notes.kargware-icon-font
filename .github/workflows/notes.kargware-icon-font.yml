@@ -104,7 +104,8 @@ jobs:
       - name: "Download Artifacts"
         uses: actions/download-artifact@v2
         with:
-          name: fonts-only
+          # name: fonts-only
+          name: notes.kargware-icon-font
           path: my-tmp-artifacts
       
       - name: "List Artifacts"

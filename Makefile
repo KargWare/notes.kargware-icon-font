@@ -133,3 +133,7 @@ generate-font: ## 04 Generate the Font
 start-font-demo: ## 05 Show the Demo-Html-Page on localhost:$(DEMO_PORT)
 	npm install --save-dev http-server
 	npx http-server $(DIST_DIR) -p $(DEMO_PORT) -o
+
+github-release-via-git-tag:
+	git tag v1.0.8 -m "Tag for version v1.0.8"
+	git push --tags
