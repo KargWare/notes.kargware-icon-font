@@ -135,5 +135,5 @@ start-font-demo: ## 05 Show the Demo-Html-Page on localhost:$(DEMO_PORT)
 	npx http-server $(DIST_DIR) -p $(DEMO_PORT) -o
 
 github-release-via-git-tag:
-	git tag v1.0.8 -m "Tag for version v1.0.8"
+	git tag v1.1.0 -m "Tag for version v1.1.0"
 	git push --tags
