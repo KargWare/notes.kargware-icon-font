@@ -22,6 +22,14 @@ make show-font-demo
 
 ### Build the Font on GitHub
 
-To build the 
+To build the
 
 ### Build the Font on GitLab
+
+## Download the Release of the font
+
+Download a single file, e.g. css only, from the realese, the sticky version v.1.1.10, can be repalces with latest.
+
+```shell
+curl -L -o webfont.css https://github.com/KargWare/notes.kargware-icon-font/releases/v1.1.10/download/notes-kargware-icon-font.css
+```
